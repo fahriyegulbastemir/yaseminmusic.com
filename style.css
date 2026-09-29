@@ -195,9 +195,11 @@ img {
     @media only screen and (max-width: 767px) {
       .section-heading h2 {
         font-size: 24px; } }
-  .section-heading h6 {
+  .section-heading .section-subheading {
     font-size: 16px;
     margin-bottom: 0;
+    line-height: 1.3;
+    font-weight: 700;
     color: #c5afd9; }
   .section-heading.dark h2 {
     color: #262626; }
@@ -498,7 +500,7 @@ img {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   cursor: pointer; }
-  .slide-down h6 {
+  .slide-down .slide-down-label {
     font-size: 16px;
     color: #ffffff;
     font-weight: 600;
@@ -567,6 +569,8 @@ img {
     position: absolute;
     color: rgba(255, 255, 255, 0.1);
     font-size: 600px;
+    font-weight: 700;
+    line-height: 1.3;
     z-index: -10;
     margin-bottom: 0; }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -647,7 +651,8 @@ img {
     -webkit-transform: scale(1);
     transform: scale(1); } }
 /* :: 6.0 About Us CSS */
-.about-content h4 {
+.about-content .bio-intro {
+  font-size: 24px;
   color: #ffffff;
   margin-bottom: 50px; }
 .about-content p {
@@ -664,6 +669,7 @@ img {
     font-size: 15px;
     color: #6a6a6a;
     margin: 20px 0;
+    line-height: 1.3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
@@ -770,20 +776,21 @@ img {
         max-width: 100%;
         width: 100%;
         margin-bottom: 30px; } }
-    .single-upcoming-shows .shows-date h2 {
+    .single-upcoming-shows .shows-date .show-date {
       font-size: 48px;
       color: #ffffff;
       text-align: center;
+      font-weight: 700;
       margin-bottom: 0;
       line-height: 1; }
-      .single-upcoming-shows .shows-date h2 span {
+      .single-upcoming-shows .shows-date .show-date span {
         font-size: 16px;
         color: #ffffff;
         font-weight: 500;
         display: block;
         line-height: 1.3; }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .single-upcoming-shows .shows-date h2 {
+        .single-upcoming-shows .shows-date .show-date {
           font-size: 36px; } }
   .single-upcoming-shows .shows-desc {
     -webkit-box-flex: 0;
@@ -813,13 +820,14 @@ img {
           flex: 0 0 60px;
           max-width: 60px;
           width: 60px; } }
-    .single-upcoming-shows .shows-desc .shows-name h6 {
+    .single-upcoming-shows .shows-desc .shows-name h3 {
+      font-size: 16px;
       font-weight: 900;
       color: #ffffff;
       text-transform: uppercase;
       margin-bottom: 0; }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .single-upcoming-shows .shows-desc .shows-name h6 {
+        .single-upcoming-shows .shows-desc .shows-name h3 {
           font-size: 13px; } }
     .single-upcoming-shows .shows-desc .shows-name p {
       margin-bottom: 0;
@@ -1061,10 +1069,19 @@ img {
     @media only screen and (max-width: 767px) {
       .single-music-player .music-info {
         padding: 15px; } }
-    .single-music-player .music-info h5 {
+    .single-music-player .music-info .track-artist {
       font-size: 18px;
-      color: #ffffff; }
-    .single-music-player .music-info p {
+      color: #ffffff;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.5rem; }
+    .single-music-player .music-info .track-title {
+      font-size: 14px;
+      color: #ffffff;
+      font-weight: 500;
+      margin-bottom: 0;
+      line-height: 1; }
+    .single-music-player .music-info p:not(.track-artist) {
       color: #ffffff;
       margin-bottom: 0;
       line-height: 1; }
@@ -1205,7 +1222,7 @@ img {
           max-width: 100%;
           width: 100%;
           margin-bottom: 30px; } }
-      .featured-album-content .album-songs .album-info .album-title h6 {
+      .featured-album-content .album-songs .album-info .album-title h2 {
         font-size: 12px;
         font-weight: 900;
         color: #c5afd9;
@@ -1231,8 +1248,9 @@ img {
       margin-bottom: 30px; }
       .featured-album-content .album-songs .single-music:last-child {
         margin-bottom: 0; }
-      .featured-album-content .album-songs .single-music h6 {
+      .featured-album-content .album-songs .single-music h3 {
         position: absolute;
+        font-size: 16px;
         font-weight: 500;
         top: 0;
         color: rgba(255, 255, 255, 0.5);
@@ -1241,7 +1259,7 @@ img {
         z-index: auto;
         margin-bottom: 0; }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
-          .featured-album-content .album-songs .single-music h6 {
+          .featured-album-content .album-songs .single-music h3 {
             font-size: 14px;
             top: 3px; } }
       .featured-album-content .album-songs .single-music.active h6 {
@@ -1274,12 +1292,14 @@ img {
         font-size: 12px;
         text-transform: uppercase;
         margin-bottom: 0; }
-      .featured-album-content .album-songs .now-playing .songs-name h6 {
+      .featured-album-content .album-songs .now-playing .songs-name .current-song {
+        font-size: 16px;
+        line-height: 1.3;
         margin-bottom: 0;
         color: #ffffff;
         font-weight: 600; }
         @media only screen and (min-width: 768px) and (max-width: 991px) {
-          .featured-album-content .album-songs .now-playing .songs-name h6 {
+          .featured-album-content .album-songs .now-playing .songs-name .current-song {
             font-size: 14px; } }
       .featured-album-content .album-songs .now-playing .audioplayer {
         margin: 0;
@@ -1482,7 +1502,7 @@ img {
       font-weight: 500; }
       .footer-area .footer-widget-area .copywrite-text a:hover, .footer-area .footer-widget-area .copywrite-text a:focus {
         color: #bd177a; }
-  .footer-area .footer-widget-area .widget-title h4 {
+  .footer-area .footer-widget-area .widget-title h2 {
     font-size: 24px;
     font-weight: 900;
     margin-bottom: 30px;
@@ -1580,17 +1600,20 @@ img {
       .breadcumb-area .bradcumbContent {
         width: 280px;
         margin-left: -140px; } }
-    .breadcumb-area .bradcumbContent h2 {
+    .breadcumb-area .bradcumbContent h2,
+    .breadcumb-area .bradcumbContent .page-title {
       font-size: 36px;
       color: #ffffff;
       margin-bottom: 0;
       line-height: 78px;
       font-weight: 900; }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .breadcumb-area .bradcumbContent h2 {
+        .breadcumb-area .bradcumbContent h2,
+        .breadcumb-area .bradcumbContent .page-title {
           font-size: 30px; } }
       @media only screen and (max-width: 767px) {
-        .breadcumb-area .bradcumbContent h2 {
+        .breadcumb-area .bradcumbContent h2,
+        .breadcumb-area .bradcumbContent .page-title {
           font-size: 26px; } }
 
 /* :: 17.0 CTA Area CSS */
@@ -1609,6 +1632,15 @@ img {
       margin-bottom: 0; }
       @media only screen and (max-width: 767px) {
         .cta-content .cta-text h4 {
+          font-size: 16px; } }
+    .cta-content .cta-text .cta-eyebrow {
+      font-size: 24px;
+      color: #ffffff;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0; }
+      @media only screen and (max-width: 767px) {
+        .cta-content .cta-text .cta-eyebrow {
           font-size: 16px; } }
     .cta-content .cta-text h2 {
       font-size: 60px;
@@ -1722,7 +1754,8 @@ img {
       color: #bd177a;
       font-size: 22px;
       line-height: 1; }
-    .map-area .map-heading h3 {
+    .map-area .map-heading h3,
+    .map-area .map-heading h2 {
       margin: 0;
       color: #fff;
       font-size: 21px;
@@ -1738,7 +1771,8 @@ img {
         gap: 10px;
         min-height: 70px;
         padding: 16px 18px; }
-        .map-area .map-heading h3 {
+        .map-area .map-heading h3,
+        .map-area .map-heading h2 {
           font-size: 17px;
           line-height: 1.35; }
       .map-area iframe {
@@ -1825,7 +1859,8 @@ img {
         font-weight: 700;
         letter-spacing: 0.18em;
         text-transform: uppercase; }
-      .contact-content.contact-content-centered .contact-details-heading h5 {
+      .contact-content.contact-content-centered .contact-details-heading h5,
+      .contact-content.contact-content-centered .contact-details-heading h2 {
         margin: 0;
         color: #2f2f2f;
         font-size: 24px;
@@ -1856,10 +1891,21 @@ img {
       font-size: 25px; }
     .contact-content .single-contact-info:last-child .icon i {
       color: #bd177a; }
-    .contact-content .single-contact-info .contact-detail-list h6 {
+    .contact-content .single-contact-info .contact-detail-list .contact-value {
+      display: block;
+      color: #262626;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 700;
       margin-bottom: 8px; }
-    .contact-content .single-contact-info .contact-detail-list h6:last-child {
+    .contact-content .single-contact-info .contact-detail-list .contact-value:last-child {
       margin-bottom: 0; }
+    .contact-content .single-contact-info > .contact-value {
+      color: #262626;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 700;
+      margin-bottom: 0.5rem; }
     .contact-content .single-contact-info .contact-phone-link {
       color: inherit;
       display: block;
