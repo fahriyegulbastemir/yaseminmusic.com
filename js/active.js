@@ -189,6 +189,24 @@
         $('audio').audioPlayer();
     }
 
+    // Keep playback exclusive within the music playlist, including carousel clones.
+    var musicPlayerElement = document.querySelector('.music-player-slides');
+    if (musicPlayerElement) {
+        musicPlayerElement.addEventListener('play', function (event) {
+            var activeAudio = event.target;
+            if (activeAudio.tagName !== 'AUDIO') {
+                return;
+            }
+
+            var playlistAudios = musicPlayerElement.querySelectorAll('audio');
+            for (var i = 0; i < playlistAudios.length; i++) {
+                if (playlistAudios[i] !== activeAudio) {
+                    playlistAudios[i].pause();
+                }
+            }
+        }, true);
+    }
+
     // :: 9.0 Tooltip Active Code
     if ($.fn.tooltip) {
         $('[data-toggle="tooltip"]').tooltip()

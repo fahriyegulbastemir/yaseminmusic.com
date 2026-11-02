@@ -1210,6 +1210,9 @@ img {
     z-index: 1;
     overflow: hidden;
     img {
+        width: 100%;
+        aspect-ratio: 800 / 574;
+        object-fit: cover;
         @include trans-duration(1000ms);
     }
     .music-info {

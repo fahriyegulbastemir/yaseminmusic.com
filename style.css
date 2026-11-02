@@ -1054,6 +1054,9 @@ img {
   z-index: 1;
   overflow: hidden; }
   .single-music-player img {
+    width: 100%;
+    aspect-ratio: 800 / 574;
+    object-fit: cover;
     -webkit-transition-duration: 1000ms;
     transition-duration: 1000ms; }
   .single-music-player .music-info {
