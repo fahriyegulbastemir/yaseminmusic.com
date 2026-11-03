@@ -1,5 +1,5 @@
 
-name: Test Natro FTPS Connection
+name: Deploy to Natro
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-connection:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,21 +18,29 @@ jobs:
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: Test secure FTPS connection
+      - name: Deploy website via FTPS
         env:
           FTP_HOST: ${{ secrets.NATRO_FTP_HOST }}
           FTP_USER: ${{ secrets.NATRO_FTP_USER }}
           FTP_PASSWORD: ${{ secrets.NATRO_FTP_PASSWORD }}
         run: |
+          set -e
+
           lftp -u "$FTP_USER","$FTP_PASSWORD" "ftp://$FTP_HOST:21" <<'EOF'
           set ftp:ssl-force true
           set ftp:ssl-protect-data true
           set ssl:verify-certificate true
           set net:max-retries 1
-          set net:timeout 15
+          set net:timeout 30
           set cmd:fail-exit true
-          pwd
-          cd httpdocs
-          ls
+
+          mirror --reverse \
+            --verbose \
+            --exclude-glob .git/ \
+            --exclude-glob .github/ \
+            --exclude-glob .DS_Store \
+            --exclude-glob README.md \
+            ./ /httpdocs/
+
           bye
           EOF
