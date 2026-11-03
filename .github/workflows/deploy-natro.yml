@@ -36,6 +36,7 @@ jobs:
 
           mirror --reverse \
             --verbose \
+            --no-perms \
             --exclude-glob .git/ \
             --exclude-glob .github/ \
             --exclude-glob .DS_Store \
